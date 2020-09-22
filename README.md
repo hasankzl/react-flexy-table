@@ -81,14 +81,18 @@ import "react-flexy-table/dist/index.css"
 
 const App = ()=>{
 
-return <ReactFlexyTable data={data} filterable nonFilterCols={["name","surname"]]/>
+return <ReactFlexyTable data={data} filterable nonFilterCols={["gender","email"]]/>
 }
+export default App;
+```
 
 <img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/nonFilterCols.png" />
 
 
-export default App;
-```
+
+
+
+
 default filter inputs doesn't works case sensitive for do that add caseSensitive props like this.
 
 ```js
