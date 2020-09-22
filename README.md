@@ -84,7 +84,7 @@ const App = ()=>{
 return <ReactFlexyTable data={data} filterable nonFilterCols={["name","surname"]]/>
 }
 
-<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/nonFilterCols.png" />
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/notFilter.png" />
 
 
 export default App;
