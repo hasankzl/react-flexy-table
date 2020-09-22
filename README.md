@@ -1,8 +1,13 @@
 # react-flexy-table
 most easy to use react table
 
-# live demo
+ ## install
 
+ ```
+ npm install react-flexy-table
+ ```
+
+# live demo
 https://react-flexy-table.netlify.app/
 
 # usage
