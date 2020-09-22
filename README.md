@@ -19,6 +19,7 @@ return <ReactFlexyTable data={data} />
 
 export default App;
 ```
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/data.png" />
 
 thats is !
 
