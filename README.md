@@ -20,6 +20,10 @@ return <ReactFlexyTable data={data} />
 export default App;
 ```
 
+
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/data.png" />
+
+
 thats is !
 
 if you want to make sortable add sortable prop
@@ -36,7 +40,7 @@ return <ReactFlexyTable data={data} sortable />
 export default App;
 ```
 
-if you want to limit filterable columns you can pass thats columns with nonSortCols props
+if you want to limit sortable columns you can pass thats columns with nonSortCols props
 
 ```js
 import ReactFlexyTable from "react-flexy-table"
@@ -66,6 +70,9 @@ return <ReactFlexyTable data={data} filterable/>
 export default App;
 ```
 
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/filter.png" />
+
+
 if you want to limit filterable columns you can pass thats columns with nonFilterCols props
 
 ```js
@@ -76,6 +83,9 @@ const App = ()=>{
 
 return <ReactFlexyTable data={data} filterable nonFilterCols={["name","surname"]]/>
 }
+
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/nonFilterCols.png" />
+
 
 export default App;
 ```
@@ -106,6 +116,10 @@ const App = ()=>{
   return <ReactFlexyTable data={data} additionalCols={additionalCols}/>
   }
 ```
+
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/additionalCols.png" />
+
+
 
 you can change pagination text with this props
 ```
