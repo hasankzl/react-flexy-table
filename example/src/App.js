@@ -7,9 +7,9 @@ import data from "./jsonData"
 import deleteIcon from "./icons/delete-button-svgrepo-com.svg"
 import editIcon from "./icons/edit-svgrepo-com.svg"
 const App = () => {
-  const [caseSensivite, setCaseSensivite] = useState(false)
-  const [sortable, setSortable] = useState(true)
-  const [filterable, setFilterable] = useState(true)
+  const [caseSensivite, setCaseSensivite] = useState(0)
+  const [sortable, setSortable] = useState(1)
+  const [filterable, setFilterable] = useState(1)
   const additionalCols = [{
     header: "Actions",
     td: (data) => {
@@ -25,21 +25,21 @@ const App = () => {
     <div style={{ display: "flex" }}>
       <div style={{ margin: "30px" }}>
         <label>Handle search case sensivite</label>
-        <select onChange={e => setCaseSensivite(Boolean(Number(e.target.value)))} style={{ marginLeft: "10px", padding: "5px" }}>
+        <select onChange={e => setCaseSensivite(Number(e.target.value))} style={{ marginLeft: "10px", padding: "5px" }} value={caseSensivite}>
           < option value={0}>Close</option>
           <option value={1}>Open</option>
         </select>
       </div>
       <div style={{ margin: "30px" }}>
         <label>Handle  sortable</label>
-        <select onChange={e => setSortable(Boolean(Number(e.target.value)))} style={{ marginLeft: "10px", padding: "5px" }}>
+        <select onChange={e => setSortable(Number(e.target.value))} style={{ marginLeft: "10px", padding: "5px" }} value={sortable}>
           < option value={0}>Close</option>
           <option value={1}>Open</option>
         </select>
       </div>
       <div style={{ margin: "30px" }}>
         <label>Handle  filterable</label>
-        <select onChange={e => setFilterable(Boolean(Number(e.target.value)))} style={{ marginLeft: "10px", padding: "5px" }}>
+        <select onChange={e => setFilterable(Number(e.target.value))} style={{ marginLeft: "10px", padding: "5px" }} value={filterable}>
           < option value={0}>Close</option>
           <option value={1}>Open</option>
         </select>

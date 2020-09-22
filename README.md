@@ -64,7 +64,7 @@ return <ReactFlexyTable data={data} filterable/>
 }
 
 export default App;
-``
+```
 
 if you want to limit filterable columns you can pass thats columns with nonFilterCols props
 
@@ -143,7 +143,7 @@ you can also override the rft-table class or you can pass your own table class l
 ```
  return <ReactFlexyTable data={data} className="own-table"/>
 ```
-i
+
 # props
 
 
@@ -165,4 +165,4 @@ i
 | filteredDataText | String   | "Filtered data count" | text for filtered data                                                                                                                |
 | caseSensitive    | Boolean  | false                 | controls search input case sensitive                                                                                                  |
 | additionalCols   | Array    | [ ]                   | additional cols for table                                                                                                             |
-| className        | String   | ""                    | className for table        
+| className        | String   | ""                    | className for table

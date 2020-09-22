@@ -26,7 +26,7 @@ function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCols,
         {additionalCols.map(additionalCol => <th key={additionalCol.header}>{additionalCol.header}</th>)}
       </tr>
       {
-        filterable &&
+        filterable == true &&
         <tr>
           {
             keys.map(key => !nonFilterCols.includes(key) ? <td key={key}><input name={key} onChange={handleSearch} type="text"></input></td> : <td></td>)
