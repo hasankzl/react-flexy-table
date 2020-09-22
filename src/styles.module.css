@@ -1,0 +1,121 @@
+/* add css module styles here (optional) */
+
+:root {
+  --rft-main-color: #00b879;
+  --rft-button-color: #00b879;
+  --rft-even-row-color: #f3f3f3;
+}
+
+.rft-table-div {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px 5px 0 0;
+  margin: 3px;
+}
+
+.rft-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 25px 0;
+  font-size: 0.9em;
+  color: #212529;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.rft-table thead tr {
+  background-color: var(--rft-main-color);
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.rft-table thead th:hover {
+  background-color: #01876c;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+  border-radius: 5px;
+}
+
+.rft-table thead input {
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+  width: 80%;
+  outline-width: 0;
+}
+
+.rft-table th, .rft-table td {
+  padding: 12px 15px;
+}
+
+.rft-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.rft-table tbody tr:nth-of-type(even) {
+  background-color: var(--rft-even-row-color);
+}
+
+.rft-table tbody tr:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  color: #009879;
+}
+
+.rft-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.rft-pagination select {
+  padding: 5px 10px;
+}
+
+.rft-pagination input {
+  padding: 5px 10px;
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.rft-pagination-button {
+  padding: 10px;
+  margin: 10px
+}
+
+.rft-search-input {
+  width: 90%;
+  margin: 5px
+}
+
+.rft-pagination-button {
+  border: 3px solid var(--rft-button-color);
+  background-color: white;
+  padding: 30px 0;
+  margin: auto 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  color: var(--rft-button-color);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 100px;
+  outline-width: 0;
+}
+
+.rft-pagination-button:hover {
+  background-color: var(--rft-button-color);
+  transition: .3s;
+  color: #fff;
+}
+
+.rft-pagination-button:active {
+  background-color: var(--rft-button-color);
+  color: #fff;
+}
