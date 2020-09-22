@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../../styles.module.css'
 
-function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCol, nonSortCol, additionalCols }) {
+function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCols, nonSortCols, additionalCols, sortable }) {
 
   const [sortBy, setSortBy] = useState("")
   const handleSearch = (e) => {
@@ -22,14 +22,14 @@ function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCol, 
   return (
     <thead>
       <tr>
-        {keys.map(key => <th key={key} onClick={() => !nonSortCol.includes(key) && handleSort(key)}>{key}</th>)}
+        {keys.map(key => <th key={key} onClick={() => sortable && !nonSortCols.includes(key) && handleSort(key)}>{key}</th>)}
         {additionalCols.map(additionalCol => <th key={additionalCol.header}>{additionalCol.header}</th>)}
       </tr>
       {
         filterable &&
         <tr>
           {
-            keys.map(key => !nonFilterCol.includes(key) ? <td key={key}><input name={key} onChange={handleSearch} type="text"></input></td> : <td></td>)
+            keys.map(key => !nonFilterCols.includes(key) ? <td key={key}><input name={key} onChange={handleSearch} type="text"></input></td> : <td></td>)
           }
           {additionalCols.map(() => <td></td>)}
         </tr>

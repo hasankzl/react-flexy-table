@@ -36,7 +36,6 @@
   color: white;
   cursor: pointer;
   transition: .3s;
-  border-radius: 5px;
 }
 
 .rft-table thead input {
@@ -89,10 +88,6 @@
   margin: 10px
 }
 
-.rft-search-input {
-  width: 90%;
-  margin: 5px
-}
 
 .rft-pagination-button {
   border: 3px solid var(--rft-button-color);
