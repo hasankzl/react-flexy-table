@@ -45,7 +45,7 @@ const App = () => {
         </select>
       </div>
     </div>
-    <ReactFlexyTable data={data} sortable={sortable} filterable={filterable} caseSensitive={caseSensivite} additionalCols={additionalCols} nonFilterCols={["gender"]}
+    <ReactFlexyTable data={data} sortable={sortable} filterable={filterable} caseSensitive={caseSensivite} additionalCols={additionalCols}
     />
   </div>
 }
