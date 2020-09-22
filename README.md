@@ -98,7 +98,7 @@ const App = ()=>{
     header: "Actions",
     td: (data) => {
       return <div>
-        <img src={deleteIcon} width="30" height="20" onClick={() => alert("this is delete for id " + data.id)} /> // delete icom
+        <img src={deleteIcon} width="30" height="20" onClick={() => alert("this is delete for id " + data.id)} /> // delete icon
         <img src={editIcon} width="30" height="20" onClick={() => alert("this is edit for id " + data.id)} /> // edit icon
       </div>
     }
