@@ -11,7 +11,7 @@ function Body({ data, pageSize, page, keys, additionalCols }) {
                 keys.map(key => <td key={key}>{singleData[key].toString()}</td>)
               }
               {
-                additionalCols.map(col => <td>{col.td(singleData)}</td>)
+                additionalCols.map((col, index) => <td key={index}>{col.td(singleData)}</td>)
               }
             </tr>
           )

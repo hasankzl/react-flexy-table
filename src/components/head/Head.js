@@ -23,7 +23,7 @@ function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCols,
     <thead>
       <tr>
         {keys.map(key => <th key={key} onClick={() => sortable && !nonSortCols.includes(key) && handleSort(key)}>{key}</th>)}
-        {additionalCols.map(additionalCol => <th key={additionalCol.header}>{additionalCol.header}</th>)}
+        {additionalCols.map((additionalCol, index) => <th key={index}>{additionalCol.header}</th>)}
       </tr>
       {
         filterable == true &&
@@ -31,7 +31,7 @@ function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCols,
           {
             keys.map(key => !nonFilterCols.includes(key) ? <td key={key}><input name={key} onChange={handleSearch} type="text"></input></td> : <td></td>)
           }
-          {additionalCols.map(() => <td></td>)}
+          {additionalCols.map((data, key) => <td key={key}></td>)}
         </tr>
       }
     </thead >

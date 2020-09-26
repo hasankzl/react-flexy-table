@@ -21,7 +21,7 @@ function Pagination({ handlePageChange, page, maxPageSize, dataCount, pageSizeOp
             <div>
               <select onChange={(e) => handlePageSizeChange(Number(e.target.value))} value={pageSize} >
                 {
-                  pageSizeOptions.map(pso => <option value={pso}>{rowsText} {pso}</option>)
+                  pageSizeOptions.map(pso => <option key={pso} value={pso}>{rowsText} {pso}</option>)
                 }
               </select>
 

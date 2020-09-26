@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 import Head from "./components/head/Head"
 import Body from "./components/body/Body"
 import Pagination from "./components/pagination/Paginition"
-
+import PropTypes from 'prop-types';
 const reactFlexyTable = ({ data, pageSize, filterable, nonFilterCols, nonSortCols, additionalCols, pageSizeOptions, onPageChange, onPageSizeChange, onSortedChange, previousText, className,
   nextText, rowsText, pageText, ofText, totalDataText, filteredDataText, caseSensitive, sortable }) => {
   const [virtualData, setVirtualData] = useState(data)
@@ -106,25 +106,25 @@ reactFlexyTable.defaultProps = {
 }
 
 reactFlexyTable.propTypes = {
-  data: Array,
-  pageSize: Number,
-  filterable: Boolean,
-  sortable: Boolean,
-  nonFilterCols: Array,
-  nonSortCols: Array,
-  pageSizeOptions: Array,
-  onPageChange: Function,
-  onSortedChange: Function,
-  onPageSizeChange: Function,
-  previousText: String,
-  nextText: String,
-  rowsText: String,
-  pageText: String,
-  ofText: String,
-  totalDataText: String,
-  filteredDataText: String,
-  caseSensitive: Boolean,
-  additionalCols: Array,
-  className: String
+  data: PropTypes.array,
+  pageSize: PropTypes.number,
+  filterable: PropTypes.bool,
+  sortable: PropTypes.bool,
+  nonFilterCols: PropTypes.array,
+  nonSortCols: PropTypes.array,
+  pageSizeOptions: PropTypes.array,
+  onPageChange: PropTypes.func,
+  onSortedChange: PropTypes.func,
+  onPageSizeChange: PropTypes.func,
+  previousText: PropTypes.string,
+  nextText: PropTypes.string,
+  rowsText: PropTypes.string,
+  pageText: PropTypes.string,
+  ofText: PropTypes.string,
+  totalDataText: PropTypes.string,
+  filteredDataText: PropTypes.string,
+  caseSensitive: PropTypes.bool,
+  additionalCols: PropTypes.array,
+  className: PropTypes.string
 }
 export default reactFlexyTable;
