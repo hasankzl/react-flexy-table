@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "./static/css/main.b50544fc.chunk.css",
-    "main.js": "./static/js/main.adfa5c9b.chunk.js",
-    "main.js.map": "./static/js/main.adfa5c9b.chunk.js.map",
+    "main.js": "./static/js/main.1f7c0cf0.chunk.js",
+    "main.js.map": "./static/js/main.1f7c0cf0.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.3c7f4e1e.js",
     "runtime-main.js.map": "./static/js/runtime-main.3c7f4e1e.js.map",
     "static/js/2.d96c131c.chunk.js": "./static/js/2.d96c131c.chunk.js",
     "static/js/2.d96c131c.chunk.js.map": "./static/js/2.d96c131c.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.b36f6f7d71f7af911ad6301c31e10bac.js": "./precache-manifest.b36f6f7d71f7af911ad6301c31e10bac.js",
+    "precache-manifest.72c5634fd45cb1bf47c9c8c3feaf3860.js": "./precache-manifest.72c5634fd45cb1bf47c9c8c3feaf3860.js",
     "service-worker.js": "./service-worker.js",
     "static/css/main.b50544fc.chunk.css.map": "./static/css/main.b50544fc.chunk.css.map",
     "static/js/2.d96c131c.chunk.js.LICENSE.txt": "./static/js/2.d96c131c.chunk.js.LICENSE.txt",
+    "static/js/main.1f7c0cf0.chunk.js.LICENSE.txt": "./static/js/main.1f7c0cf0.chunk.js.LICENSE.txt",
     "static/media/delete-button-svgrepo-com.svg": "./static/media/delete-button-svgrepo-com.79cf255d.svg",
     "static/media/edit-svgrepo-com.svg": "./static/media/edit-svgrepo-com.f6ac279a.svg"
   },
@@ -19,6 +20,6 @@
     "static/js/runtime-main.3c7f4e1e.js",
     "static/js/2.d96c131c.chunk.js",
     "static/css/main.b50544fc.chunk.css",
-    "static/js/main.adfa5c9b.chunk.js"
+    "static/js/main.1f7c0cf0.chunk.js"
   ]
 }

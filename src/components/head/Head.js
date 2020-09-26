@@ -6,7 +6,6 @@ function Head({ keys, filterable, handleQueries, sortVirtualData, nonFilterCols,
   const [sortBy, setSortBy] = useState("")
   const handleSearch = (e) => {
     const newQuery = { key: e.target.name, search: e.target.value }
-    console.log(newQuery)
     handleQueries(newQuery)
   }
 
