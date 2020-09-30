@@ -29,6 +29,12 @@ export default App;
 <img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/data.png" />
 
 
+
+| :memo:        | if your data includes key with '_' like 'user_id' in header of table. It will be transform to 'User Id'|
+|---------------|:------------------------|
+
+
+
 thats is !
 
 if you want to make sortable add sortable prop
