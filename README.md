@@ -30,7 +30,8 @@ export default App;
 
 
 
-if your data includes key with '_' like 'last_name' in header of table. It will be transform to 'Last Name'
+| :memo:        | if your data includes key with '_' like 'last_name' in header of table. It will be transform to 'Last Name'|
+|---------------|:------------------------|
 
 
 
