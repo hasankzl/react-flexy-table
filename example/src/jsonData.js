@@ -1,91 +1,91 @@
 export default [{
   "id": 1,
   "name": "Leonanie",
-  "lastname": "Mountfort",
+  "last_name": "Mountfort",
   "email": "lmountfort0@t-online.de",
   "gender": "Female"
 }, {
   "id": 2,
   "name": "Iosep",
-  "lastname": "Anand",
+  "last_name": "Anand",
   "email": "ianand1@digg.com",
   "gender": "Male"
 }, {
   "id": 3,
   "name": "Karlis",
-  "lastname": "Matchitt",
+  "last_name": "Matchitt",
   "email": "kmatchitt2@sina.com.cn",
   "gender": "Male"
 }, {
   "id": 4,
   "name": "Dukie",
-  "lastname": "Perceval",
+  "last_name": "Perceval",
   "email": "dperceval3@mysql.com",
   "gender": "Male"
 }, {
   "id": 5,
   "name": "Gaultiero",
-  "lastname": "Simmell",
+  "last_name": "Simmell",
   "email": "gsimmell4@geocities.jp",
   "gender": "Male"
 }, {
   "id": 6,
   "name": "Yorker",
-  "lastname": "Kapiloff",
+  "last_name": "Kapiloff",
   "email": "ykapiloff5@foxnews.com",
   "gender": "Male"
 }, {
   "id": 7,
   "name": "Nestor",
-  "lastname": "Laurentino",
+  "last_name": "Laurentino",
   "email": "nlaurentino6@weather.com",
   "gender": "Male"
 }, {
   "id": 8,
   "name": "Farley",
-  "lastname": "Rowcastle",
+  "last_name": "Rowcastle",
   "email": "frowcastle7@4shared.com",
   "gender": "Male"
 }, {
   "id": 9,
   "name": "Krystalle",
-  "lastname": "Lanphier",
+  "last_name": "Lanphier",
   "email": "klanphier8@ca.gov",
   "gender": "Female"
 }, {
   "id": 10,
   "name": "Cletus",
-  "lastname": "MacPhail",
+  "last_name": "MacPhail",
   "email": "cmacphail9@vistaprint.com",
   "gender": "Male"
 }, {
   "id": 11,
   "name": "Inness",
-  "lastname": "Abrahamovitz",
+  "last_name": "Abrahamovitz",
   "email": "iabrahamovitza@home.pl",
   "gender": "Male"
 }, {
   "id": 12,
   "name": "Fawne",
-  "lastname": "Portingale",
+  "last_name": "Portingale",
   "email": "fportingaleb@shutterfly.com",
   "gender": "Female"
 }, {
   "id": 13,
   "name": "Malanie",
-  "lastname": "Occleshaw",
+  "last_name": "Occleshaw",
   "email": "moccleshawc@gravatar.com",
   "gender": "Female"
 }, {
   "id": 14,
   "name": "Iago",
-  "lastname": "Sweedland",
+  "last_name": "Sweedland",
   "email": "isweedlandd@mtv.com",
   "gender": "Male"
 }, {
   "id": 15,
   "name": "Warden",
-  "lastname": "Renvoys",
+  "last_name": "Renvoys",
   "email": "wrenvoyse@icio.us",
   "gender": "Male"
 }]

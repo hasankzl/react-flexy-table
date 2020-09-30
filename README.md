@@ -163,9 +163,18 @@ you can simply change the colors just change this css variables
 
 you can also override the rft-table class or you can pass your own table class like
 
+```js
+ return <ReactFlexyTable data={data} className="my-table"/>
 ```
- return <ReactFlexyTable data={data} className="own-table"/>
-```
+
+and you can change the styling
+```css
+.my-table tr {
+  color:red;
+  font-weight:bold;
+}
+
+````
 
 # props
 
