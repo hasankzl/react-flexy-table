@@ -93,6 +93,23 @@ export default App;
 
 <img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/nonFilterCols.png" />
 
+You can also add global search input for search in all data.
+
+```js
+import ReactFlexyTable from "react-flexy-table"
+import "react-flexy-table/dist/index.css"
+
+const App = ()=>{
+
+return <ReactFlexyTable data={data} filterable globalSearch/>
+}
+export default App;
+```
+
+<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/globalSearch.png" />
+
+
+
 default filter inputs doesn't works case sensitive for do that add caseSensitive props like this.(Also work with global search)
 
 ```js
@@ -184,6 +201,13 @@ and you can change the styling
   font-weight: bold;
 }
 ```
+you can olsu change the global search input style with override this classes 
+
+```
+rtf-gs-input
+rft-gs-td
+rft-gs-tr
+```
 
 # props
 
@@ -193,6 +217,7 @@ and you can change the styling
 |     pageSize     |  Number  | 5                     |                                                        page size of the table                                                        |
 |     sortable     | Boolean  | false                 |                                                   allows to sort data from header                                                    |
 |    filterable    | Boolean  | false                 |                                                     open filter inputs for table                                                     |
+|    GlobalSearch   |  Boolean  | false               |                                                         shows the global search input                                                          |
 |  nonFilterCols   |  array   | [ ]                   | if filterable open but you dont want to filter some cols you can use this. array includes column names that you dont want to filter. |
 |   nonSortCols    |  array   | [ ]                   |             if you dont want to sort some cols you can use this. array includes column name that you dont want to sort.              |
 | pageSizeOptions  |  array   | [5,10,15,20]          |                                                  represent page size select options                                                  |
@@ -201,8 +226,11 @@ and you can change the styling
 | onPageSizeChange | funtion  |                       |                                                    callback for page size change                                                     |
 |   previousText   |  String  | "Previous"            |                                                       text for previos button                                                        |
 |      ofText      |  String  | "of"                  |                                                             text for of                                                              |
+|      searchText      |  String  | "Search"          |                                                         text for global search                                                              |
+
 |  totalDataText   |  String  | "Total data count"    |                                                         text for total data                                                          |
 | filteredDataText |  String  | "Filtered data count" |                                                        text for filtered data                                                        |
 |  caseSensitive   | Boolean  | false                 |                                                 controls search input case sensitive                                                 |
 |  additionalCols  |  Array   | [ ]                   |                                                      additional cols for table                                                       |
 |    className     |  String  | ""                    |                                                         className for table                                                          |
+
