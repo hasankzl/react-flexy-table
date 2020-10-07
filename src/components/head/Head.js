@@ -9,14 +9,21 @@ function Head({
   nonFilterCols,
   nonSortCols,
   additionalCols,
-  sortable
+  sortable,
+  globalSearch,
+  generalFilterVirtualData,
+  colSpan,
+  searchText
 }) {
   const [sortBy, setSortBy] = useState('')
   const handleSearch = (e) => {
     const newQuery = { key: e.target.name, search: e.target.value }
     handleQueries(newQuery)
   }
-
+  const handleGeneralSearch = (e) => {
+    const query = e.target.value
+    generalFilterVirtualData(query)
+  }
   const handleSort = (key) => {
     // if clicked before chage asc
     const isAsc = sortBy === key ? -1 : 1
@@ -28,6 +35,19 @@ function Head({
 
   return (
     <thead>
+      {globalSearch && (
+        <tr className={'rft-gs-tr ' + styles['rft-gs-tr']}>
+          <td colSpan={colSpan - 1} />
+          <td className={'rft-gs-td ' + styles['rft-gs-td']}>
+            <span>{searchText}</span>
+            <input
+              className={'rft-gs-input ' + styles['rft-gs-input']}
+              type='text'
+              onChange={handleGeneralSearch}
+            />
+          </td>
+        </tr>
+      )}
       <tr>
         {keys.map((key) => (
           <th
