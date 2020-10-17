@@ -5,7 +5,9 @@
   --rft-button-color: #00b879;
   --rft-even-row-color: #f3f3f3;
 }
-
+.rft-table-collapse{
+overflow-x: auto;
+}
 .rft-gs-input {
   width: 70% !important;
   padding: 7px !important;
@@ -26,7 +28,6 @@
 .rft-table {
   border-collapse: collapse;
   width: 100%;
-  margin: 25px 0;
   font-size: 0.9em;
   color: #212529;
   border-radius: 5px 5px 0 0;

@@ -27,7 +27,7 @@ const App = () => {
 export default App
 ```
 
-<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/data.png" />
+<img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/data.png" />
 
 | :memo: | if your data includes key with '\_' like 'user_id' in header of table. It will be transform to 'User Id' |
 | ------ | :------------------------------------------------------------------------------------------------------- |
@@ -76,7 +76,7 @@ const App = () => {
 export default App
 ```
 
-<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/filter.png" />
+<img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/filter.png" />
 
 if you want to limit filterable columns you can pass thats columns with nonFilterCols props
 
@@ -91,7 +91,7 @@ return <ReactFlexyTable data={data} filterable nonFilterCols={["gender","email"]
 export default App;
 ```
 
-<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/nonFilterCols.png" />
+<img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/nonFilterCols.png" />
 
 You can also add global search input for search in all data.
 
@@ -106,7 +106,7 @@ return <ReactFlexyTable data={data} filterable globalSearch/>
 export default App;
 ```
 
-<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/globalSearch.png" />
+<img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/globalSearch.png" />
 
 
 
@@ -153,7 +153,7 @@ const App = () => {
 }
 ```
 
-<img src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/additionalCols.png" />
+<img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/additionalCols.png" />
 
 you can change pagination text with this props
 
@@ -201,7 +201,7 @@ and you can change the styling
   font-weight: bold;
 }
 ```
-you can olsu change the global search input style with override this classes 
+you can also change the global search input style with override this classes
 
 ```
 rtf-gs-input

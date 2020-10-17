@@ -122,7 +122,7 @@ const reactFlexyTable = ({
     onSortedChange(sortBy)
   }
   return (
-    <div>
+    <div className={'rft-table-collapse ' + styles['rft-table-collapse']}>
       <table className={'rtf-table ' + styles['rft-table'] + ' ' + className}>
         <Head
           keys={keys}

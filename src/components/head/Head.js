@@ -36,7 +36,7 @@ function Head({
   return (
     <thead>
       {globalSearch && (
-        <tr className={'rft-gs-tr ' + styles['rft-gs-tr']}>
+        <tr className='rft-gs-tr'>
           <td colSpan={colSpan - 1} />
           <td className={'rft-gs-td ' + styles['rft-gs-td']}>
             <span>{searchText}</span>
