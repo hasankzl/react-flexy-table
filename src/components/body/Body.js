@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { getProp } from '../util/functions'
 function Body({ data, pageSize, page, keys, additionalCols, columns }) {
   return (
     <tbody>
@@ -10,7 +10,9 @@ function Body({ data, pageSize, page, keys, additionalCols, columns }) {
             <tr key={index}>
               {columns.map((col) => (
                 <td key={col.key}>
-                  {col.td ? col.td(singleData) : singleData[col.key].toString()}
+                  {col.td
+                    ? col.td(singleData)
+                    : getProp(singleData, col.key.split('.')).toString()}
                 </td>
               ))}
             </tr>

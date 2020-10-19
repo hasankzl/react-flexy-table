@@ -48,7 +48,6 @@ const App = () => {
 export default App
 ```
 
-
 if you want to add some additional columns you can use additionalCols props like that
 
 ```js
@@ -88,7 +87,6 @@ const App = () => {
 
 <img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/additionalCols.png" />
 
-
 you can also define your columns so you can change the table values anything you like. (Note if you define columns your additionalcol value will not work)
 
 ```js
@@ -105,6 +103,11 @@ const App = () => {
     {
       header: 'username',
       key: 'name'
+    },
+    {
+      header: 'city',
+      // can also use with nested objects
+      key: 'address.city'
     }
   ]
   return <ReactFlexyTable data={data} columns={columns} />
@@ -178,7 +181,6 @@ default filter inputs doesn't works case sensitive for do that add caseSensitive
 return <ReactFlexyTable data={data} filterable caseSensitive />
 ```
 
-
 you can change pagination text with this props
 
 ```
@@ -236,25 +238,25 @@ rft-gs-tr
 
 # props
 
-|     property     |   type   | default      |                                                             description                                                              |
-| :--------------: | :------: | ------------ | :----------------------------------------------------------------------------------------------------------------------------------: |
-|       data       |  array   | [ ]          |                                                            data for table                                                            |
-|       columns    |  array   | null         |                                                            columns for table                                                         |
-| additionalCols | Array | [ ] | additional cols for table |
-|     pageSize     |  Number  | 5            |                                                        page size of the table                                                        |
-|     sortable     | Boolean  | false        |                                                   allows to sort data from header                                                    |
-|    filterable    | Boolean  | false        |                                                     open filter inputs for table                                                     |
-|   GlobalSearch   | Boolean  | false        |                                                    shows the global search input                                                     |
-|  nonFilterCols   |  array   | [ ]          | if filterable open but you dont want to filter some cols you can use this. array includes column names that you dont want to filter. |
-|   nonSortCols    |  array   | [ ]          |             if you dont want to sort some cols you can use this. array includes column name that you dont want to sort.              |
-| pageSizeOptions  |  array   | [5,10,15,20] |                                                  represent page size select options                                                  |
-|   onPageChange   | function |              |                                                       callback for page change                                                       |
-|  onSortedChange  | function |              |                                                      callback for sorted change                                                      |
-| onPageSizeChange | funtion  |              |                                                    callback for page size change                                                     |
-|   previousText   |  String  | "Previous"   |                                                       text for previos button                                                        |
-|      ofText      |  String  | "of"         |                                                             text for of                                                              |
-|    searchText    |  String  | "Search"     |                                                        text for global search                                                        |
-| totalDataText | String | "Total data count" | text for total data |
-| filteredDataText | String | "Filtered data count" | text for filtered data |
-| caseSensitive | Boolean | false | controls search input case sensitive |
-| className | String | "" | className for table |
+|     property     |   type   | default               |                                                             description                                                              |
+| :--------------: | :------: | --------------------- | :----------------------------------------------------------------------------------------------------------------------------------: |
+|       data       |  array   | [ ]                   |                                                            data for table                                                            |
+|     columns      |  array   | null                  |                                                          columns for table                                                           |
+|  additionalCols  |  Array   | [ ]                   |                                                      additional cols for table                                                       |
+|     pageSize     |  Number  | 5                     |                                                        page size of the table                                                        |
+|     sortable     | Boolean  | false                 |                                                   allows to sort data from header                                                    |
+|    filterable    | Boolean  | false                 |                                                     open filter inputs for table                                                     |
+|   GlobalSearch   | Boolean  | false                 |                                                    shows the global search input                                                     |
+|  nonFilterCols   |  array   | [ ]                   | if filterable open but you dont want to filter some cols you can use this. array includes column names that you dont want to filter. |
+|   nonSortCols    |  array   | [ ]                   |             if you dont want to sort some cols you can use this. array includes column name that you dont want to sort.              |
+| pageSizeOptions  |  array   | [5,10,15,20]          |                                                  represent page size select options                                                  |
+|   onPageChange   | function |                       |                                                       callback for page change                                                       |
+|  onSortedChange  | function |                       |                                                      callback for sorted change                                                      |
+| onPageSizeChange | funtion  |                       |                                                    callback for page size change                                                     |
+|   previousText   |  String  | "Previous"            |                                                       text for previos button                                                        |
+|      ofText      |  String  | "of"                  |                                                             text for of                                                              |
+|    searchText    |  String  | "Search"              |                                                        text for global search                                                        |
+|  totalDataText   |  String  | "Total data count"    |                                                         text for total data                                                          |
+| filteredDataText |  String  | "Filtered data count" |                                                        text for filtered data                                                        |
+|  caseSensitive   | Boolean  | false                 |                                                 controls search input case sensitive                                                 |
+|    className     |  String  | ""                    |                                                         className for table                                                          |

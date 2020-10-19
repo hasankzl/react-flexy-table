@@ -37,14 +37,8 @@ const App = () => {
   ]
   const columns = [
     {
-      header: 'id',
-      key: 'id'
-    },
-
-    {
-      header: 'username',
-      key: 'name',
-      td: (data) => <div>{`${data.name} ${data.id}`}</div>
+      header: 'name',
+      key: 'user.name'
     },
     {
       header: 'Actions',

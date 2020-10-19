@@ -4,6 +4,8 @@ import Head from './components/head/Head'
 import Body from './components/body/Body'
 import Pagination from './components/pagination/Paginition'
 import PropTypes from 'prop-types'
+import { getProp } from './components/util/functions'
+
 const reactFlexyTable = ({
   data,
   pageSize,
@@ -42,23 +44,29 @@ const reactFlexyTable = ({
   const colSpan = columns ? columns.length : keys.length + additionalCols.length
   const defaultFilter = (d, newQueries) => {
     return newQueries.every((query) =>
-      d[query.key].toString().toLowerCase().includes(query.search.toLowerCase())
+      getProp(d, query.key.split('.'))
+        .toString()
+        .toLowerCase()
+        .includes(query.search.toLowerCase())
     )
   }
   const defaultFilterCaseSensitive = (d, newQueries) => {
     return newQueries.every((query) =>
-      d[query.key].toString().includes(query.search)
+      getProp(d, query.key.split('.')).toString().includes(query.search)
     )
   }
 
   const generalDefaultFilter = (d, query) => {
     return keys.some((key) => {
-      return d[key].toString().toLowerCase().includes(query.toLowerCase())
+      return getProp(d, key.split('.'))
+        .toString()
+        .toLowerCase()
+        .includes(query.toLowerCase())
     })
   }
   const generalDefaultFilterCaseSensitive = (d, query) => {
     return keys.some((key) => {
-      return d[key].toString().includes(query)
+      return getProp(d, key.split('.')).toString().includes(query)
     })
   }
 
