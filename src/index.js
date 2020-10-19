@@ -26,17 +26,20 @@ const reactFlexyTable = ({
   filteredDataText,
   caseSensitive,
   sortable,
-  globalSearch
+  globalSearch,
+  columns
 }) => {
   const [virtualData, setVirtualData] = useState(data)
   const [queries, setQueries] = useState([])
   const [page, setPage] = useState(1)
   const [dataSize, setDataSize] = useState(pageSize)
-  const keys = Object.keys(data[0])
+  const keys = columns
+    ? columns.map((col) => col.key).filter((col) => col !== undefined)
+    : Object.keys(data[0])
   const dataCount = data.length
   const virtualDataCount = virtualData.length
   const maxPageSize = Math.ceil(virtualDataCount / dataSize)
-  const colSpan = keys.length + additionalCols.length
+  const colSpan = columns ? columns.length : keys.length + additionalCols.length
   const defaultFilter = (d, newQueries) => {
     return newQueries.every((query) =>
       d[query.key].toString().toLowerCase().includes(query.search.toLowerCase())
@@ -138,6 +141,7 @@ const reactFlexyTable = ({
           globalSearch={globalSearch}
           colSpan={colSpan}
           searchText={searchText}
+          columns={columns}
         />
         <Body
           keys={keys}
@@ -145,6 +149,7 @@ const reactFlexyTable = ({
           pageSize={dataSize}
           page={page}
           additionalCols={additionalCols}
+          columns={columns}
         />
         <Pagination
           handlePageChange={handlePageChange}
@@ -170,6 +175,7 @@ const reactFlexyTable = ({
 
 reactFlexyTable.defaultProps = {
   data: [],
+  columns: null,
   pageSize: 5,
   filterable: false,
   sortable: false,

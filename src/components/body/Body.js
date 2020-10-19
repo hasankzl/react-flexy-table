@@ -1,12 +1,20 @@
 import React from 'react'
 
-function Body({ data, pageSize, page, keys, additionalCols }) {
+function Body({ data, pageSize, page, keys, additionalCols, columns }) {
   return (
     <tbody>
       {data
         .slice(pageSize * (page - 1), pageSize * page)
         .map((singleData, index) => {
-          return (
+          return columns ? (
+            <tr key={index}>
+              {columns.map((col) => (
+                <td key={col.key}>
+                  {col.td ? col.td(singleData) : singleData[col.key].toString()}
+                </td>
+              ))}
+            </tr>
+          ) : (
             <tr key={index}>
               {keys.map((key) => (
                 <td key={key}>{singleData[key].toString()}</td>

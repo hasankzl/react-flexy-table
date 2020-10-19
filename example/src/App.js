@@ -35,7 +35,41 @@ const App = () => {
       }
     }
   ]
+  const columns = [
+    {
+      header: 'id',
+      key: 'id'
+    },
 
+    {
+      header: 'username',
+      key: 'name',
+      td: (data) => <div>{`${data.name} ${data.id}`}</div>
+    },
+    {
+      header: 'Actions',
+      td: (data) => {
+        return (
+          <div>
+            <img
+              src={deleteIcon}
+              alt='delete'
+              width='30'
+              height='20'
+              onClick={() => alert('this is delete for id ' + data.id)}
+            />
+            <img
+              src={editIcon}
+              alt='edit'
+              width='30'
+              height='20'
+              onClick={() => alert('this is edit for id ' + data.id)}
+            />
+          </div>
+        )
+      }
+    }
+  ]
   return (
     <div style={{ margin: '30px' }}>
       <h2 style={{ textAlign: 'center' }}>react-flexy-table</h2>

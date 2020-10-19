@@ -13,7 +13,8 @@ function Head({
   globalSearch,
   generalFilterVirtualData,
   colSpan,
-  searchText
+  searchText,
+  columns
 }) {
   const [sortBy, setSortBy] = useState('')
   const handleSearch = (e) => {
@@ -49,34 +50,56 @@ function Head({
         </tr>
       )}
       <tr>
-        {keys.map((key) => (
-          <th
-            key={key}
-            onClick={() =>
-              sortable && !nonSortCols.includes(key) && handleSort(key)
-            }
-          >
-            {key.replace('_', ' ')}
-          </th>
-        ))}
-        {additionalCols.map((additionalCol, index) => (
-          <th key={index}>{additionalCol.header.replace('_', ' ')}</th>
-        ))}
+        {columns
+          ? columns.map((col) => (
+              <th
+                key={col.key}
+                onClick={() =>
+                  sortable &&
+                  !nonSortCols.includes(col.key) &&
+                  handleSort(col.key)
+                }
+              >
+                {col.header}
+              </th>
+            ))
+          : keys.map((key) => (
+              <th
+                key={key}
+                onClick={() =>
+                  sortable && !nonSortCols.includes(key) && handleSort(key)
+                }
+              >
+                {key.replace('_', ' ')}
+              </th>
+            ))}
+        {!columns &&
+          additionalCols.map((additionalCol, index) => (
+            <th key={index}>{additionalCol.header.replace('_', ' ')}</th>
+          ))}
       </tr>
       {filterable === true && (
         <tr>
-          {keys.map((key) =>
-            !nonFilterCols.includes(key) ? (
-              <td key={key}>
-                <input name={key} onChange={handleSearch} type='text' />
-              </td>
-            ) : (
-              <td />
-            )
-          )}
-          {additionalCols.map((data, key) => (
-            <td key={key} />
-          ))}
+          {columns
+            ? columns.map((col) =>
+                !nonFilterCols.includes(col.key) && col.key ? (
+                  <td key={col.key}>
+                    <input name={col.key} onChange={handleSearch} type='text' />
+                  </td>
+                ) : (
+                  <td />
+                )
+              )
+            : keys.map((key) =>
+                !nonFilterCols.includes(key) ? (
+                  <td key={key}>
+                    <input name={key} onChange={handleSearch} type='text' />
+                  </td>
+                ) : (
+                  <td />
+                )
+              )}
+          {!columns && additionalCols.map((data, key) => <td key={key} />)}
         </tr>
       )}
     </thead>
