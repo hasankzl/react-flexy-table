@@ -1,15 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import ReactFlexyTable from 'react-flexy-table'
 import 'react-flexy-table/dist/index.css'
 import './index.css'
-import data from './jsonData'
+
 import deleteIcon from './icons/delete-button-svgrepo-com.svg'
 import editIcon from './icons/edit-svgrepo-com.svg'
+
 const App = () => {
   const [caseSensivite, setCaseSensivite] = useState(false)
   const [sortable, setSortable] = useState(true)
   const [filterable, setFilterable] = useState(true)
+  const [data, setData] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const endpoint = `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean`
+      const items = await (await fetch(endpoint)).json()
+      setData(items.results)
+    }
+
+    fetchData()
+  }, [])
   const additionalCols = [
     {
       header: 'Actions',

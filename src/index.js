@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 import Head from './components/head/Head'
 import Body from './components/body/Body'
@@ -31,13 +31,28 @@ const reactFlexyTable = ({
   globalSearch,
   columns
 }) => {
-  const [virtualData, setVirtualData] = useState(data)
+  useEffect(() => {
+    // if the data change set the new data to table
+    if (virtualData !== data) {
+      setVirtualData(data)
+    }
+  }, [data])
+  const [virtualData, setVirtualData] = useState([...data])
   const [queries, setQueries] = useState([])
+
   const [page, setPage] = useState(1)
   const [dataSize, setDataSize] = useState(pageSize)
-  const keys = columns
-    ? columns.map((col) => col.key).filter((col) => col !== undefined)
-    : Object.keys(data[0])
+  if (pageSize !== dataSize) {
+    setDataSize(pageSize)
+  }
+  let keys
+  if (data.length === 0) {
+    keys = []
+  } else {
+    keys = columns
+      ? columns.map((col) => col.key).filter((col) => col !== undefined)
+      : Object.keys(data[0])
+  }
   const dataCount = data.length
   const virtualDataCount = virtualData.length
   const maxPageSize = Math.ceil(virtualDataCount / dataSize)
