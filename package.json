@@ -1,6 +1,6 @@
 {
   "name": "react-flexy-table",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "most easy to use react table",
   "author": "CoderSau",
   "license": "MIT",
@@ -16,12 +16,13 @@
     "react",
     "table",
     "react-table",
-    "react-flext-table",
+    "react-flexy-table",
     "flexy-table",
     "datagrid",
     "component",
     "excel",
-    "download table excel"
+    "download excel",
+
   ],
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",

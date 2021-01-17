@@ -275,6 +275,8 @@ you can also change the global search input style with override this classes
 rtf-gs-input
 rft-gs-td
 rft-gs-tr
+rft-excel-button
+rft-pagination-button
 ```
 
 # props
