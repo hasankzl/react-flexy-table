@@ -191,6 +191,7 @@ you can change pagination text with this props
   ofText: String,
   totalDataText: String,
   filteredDataText: String,
+   downloadExcelText: String,
 ```
 
 you can also use this callbacks for table actions
@@ -199,6 +200,42 @@ you can also use this callbacks for table actions
    onPageChange: Function,
   onSortedChange: Function,
   onPageSizeChange: Function,
+```
+
+# download data in excel
+
+you can download your data in excel file. For do that use showExcelButton
+
+```js
+return <ReactFlexyTable data={data} filterable caseSensitive showExcelButton />
+```
+
+you can pass a downloadExcelProps object to change download excel properties
+
+downloadExcelProps is an object includes 3 prop
+
+{
+type: // default is "all" it could be "filtered","all","paged" if you pass "all" will download all data if you pass "filtered"
+// will download all filtered data, if you pass "paged" will download the current page
+title: // name of the excel file default is "table"
+showLabel: // takes a bool value default is "true". Determines the appearance of column names in the file
+}
+
+```js
+const downloadExcelProps = {
+  type: 'filtered',
+  title: 'test',
+  showLabel: true
+}
+return (
+  <ReactFlexyTable
+    data={data}
+    filterable
+    caseSensitive
+    showExcelButton
+    downloadExcelProps={downloadExcelProps}
+  />
+)
 ```
 
 # styling
@@ -238,25 +275,28 @@ rft-gs-tr
 
 # props
 
-|     property     |   type   | default               |                                                             description                                                              |
-| :--------------: | :------: | --------------------- | :----------------------------------------------------------------------------------------------------------------------------------: |
-|       data       |  array   | [ ]                   |                                                            data for table                                                            |
-|     columns      |  array   | null                  |                                                          columns for table                                                           |
-|  additionalCols  |  Array   | [ ]                   |                                                      additional cols for table                                                       |
-|     pageSize     |  Number  | 5                     |                                                        page size of the table                                                        |
-|     sortable     | Boolean  | false                 |                                                   allows to sort data from header                                                    |
-|    filterable    | Boolean  | false                 |                                                     open filter inputs for table                                                     |
-|   GlobalSearch   | Boolean  | false                 |                                                    shows the global search input                                                     |
-|  nonFilterCols   |  array   | [ ]                   | if filterable open but you dont want to filter some cols you can use this. array includes column names that you dont want to filter. |
-|   nonSortCols    |  array   | [ ]                   |             if you dont want to sort some cols you can use this. array includes column name that you dont want to sort.              |
-| pageSizeOptions  |  array   | [5,10,15,20]          |                                                  represent page size select options                                                  |
-|   onPageChange   | function |                       |                                                       callback for page change                                                       |
-|  onSortedChange  | function |                       |                                                      callback for sorted change                                                      |
-| onPageSizeChange | funtion  |                       |                                                    callback for page size change                                                     |
-|   previousText   |  String  | "Previous"            |                                                       text for previos button                                                        |
-|      ofText      |  String  | "of"                  |                                                             text for of                                                              |
-|    searchText    |  String  | "Search"              |                                                        text for global search                                                        |
-|  totalDataText   |  String  | "Total data count"    |                                                         text for total data                                                          |
-| filteredDataText |  String  | "Filtered data count" |                                                        text for filtered data                                                        |
-|  caseSensitive   | Boolean  | false                 |                                                 controls search input case sensitive                                                 |
-|    className     |  String  | ""                    |                                                         className for table                                                          |
+|      property      |   type   | default                                      |                                                             description                                                              |
+| :----------------: | :------: | -------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------: |
+|        data        |  array   | [ ]                                          |                                                            data for table                                                            |
+|      columns       |  array   | null                                         |                                                          columns for table                                                           |
+|   additionalCols   |  Array   | [ ]                                          |                                                      additional cols for table                                                       |
+|      pageSize      |  Number  | 5                                            |                                                        page size of the table                                                        |
+|      sortable      | Boolean  | false                                        |                                                   allows to sort data from header                                                    |
+|     filterable     | Boolean  | false                                        |                                                     open filter inputs for table                                                     |
+|    GlobalSearch    | Boolean  | false                                        |                                                    shows the global search input                                                     |
+|   nonFilterCols    |  array   | [ ]                                          | if filterable open but you dont want to filter some cols you can use this. array includes column names that you dont want to filter. |
+|    nonSortCols     |  array   | [ ]                                          |             if you dont want to sort some cols you can use this. array includes column name that you dont want to sort.              |
+|  pageSizeOptions   |  array   | [5,10,15,20]                                 |                                                  represent page size select options                                                  |
+|    onPageChange    | function |                                              |                                                       callback for page change                                                       |
+|   onSortedChange   | function |                                              |                                                      callback for sorted change                                                      |
+|  onPageSizeChange  | funtion  |                                              |                                                    callback for page size change                                                     |
+|    previousText    |  String  | "Previous"                                   |                                                       text for previos button                                                        |
+|       ofText       |  String  | "of"                                         |                                                             text for of                                                              |
+|     searchText     |  String  | "Search"                                     |                                                        text for global search                                                        |
+|   totalDataText    |  String  | "Total data count"                           |                                                         text for total data                                                          |
+|  filteredDataText  |  String  | "Filtered data count"                        |                                                        text for filtered data                                                        |
+| downloadExcelText  |  String  | "Download Excel"                             |                                                    text for download excel button                                                    |
+|  showExcelButton   | Boolean  | false                                        |                                                   shows the download excel button                                                    |
+| downloadExcelProps |  Object  | {type:'all', title:'table', showLabel:true } |                                                    properties for excel download                                                     |
+|   caseSensitive    | Boolean  | false                                        |                                                 controls search input case sensitive                                                 |
+|     className      |  String  | ""                                           |                                                         className for table                                                          |

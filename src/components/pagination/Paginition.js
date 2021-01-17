@@ -17,7 +17,10 @@ function Pagination({
   ofText,
   totalDataText,
   filteredDataText,
-  colSpan
+  downloadExcelText,
+  colSpan,
+  showExcelButton,
+  downloadExcelFunc
 }) {
   return (
     <tfoot>
@@ -72,6 +75,14 @@ function Pagination({
                 ))}
               </select>
             </div>
+            {showExcelButton && (
+              <button
+                className={'rft-excel-button ' + styles['rft-excel-button']}
+                onClick={() => downloadExcelFunc()}
+              >
+                {downloadExcelText}
+              </button>
+            )}
             <button
               className={
                 'rft-pagination-button ' + styles['rft-pagination-button']

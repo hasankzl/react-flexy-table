@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 import Head from './components/head/Head'
 import Body from './components/body/Body'
 import Pagination from './components/pagination/Paginition'
 import PropTypes from 'prop-types'
-import { getProp } from './components/util/functions'
-
+import { getProp, DownloadJsonData } from './components/util/functions'
 const reactFlexyTable = ({
   data,
   pageSize,
@@ -26,25 +25,27 @@ const reactFlexyTable = ({
   searchText,
   totalDataText,
   filteredDataText,
+  downloadExcelText,
   caseSensitive,
   sortable,
   globalSearch,
+  downloadExcelProps,
+  showExcelButton,
   columns
 }) => {
-  useEffect(() => {
-    // if the data change set the new data to table
-    if (virtualData !== data) {
-      setVirtualData(data)
-    }
-  }, [data])
   const [virtualData, setVirtualData] = useState([...data])
-  const [queries, setQueries] = useState([])
+  const [copyData, setCopyData] = useState([...data])
 
+  // maybe this is not the correct way to check if data is changed
+  // but I couldn't find any other way and some how useEffect didn't work
+  if (copyData !== data) {
+    setCopyData(data)
+    setVirtualData(data)
+  }
+  const [queries, setQueries] = useState([])
   const [page, setPage] = useState(1)
   const [dataSize, setDataSize] = useState(pageSize)
-  if (pageSize !== dataSize) {
-    setDataSize(pageSize)
-  }
+
   let keys
   if (data.length === 0) {
     keys = []
@@ -53,6 +54,7 @@ const reactFlexyTable = ({
       ? columns.map((col) => col.key).filter((col) => col !== undefined)
       : Object.keys(data[0])
   }
+
   const dataCount = data.length
   const virtualDataCount = virtualData.length
   const maxPageSize = Math.ceil(virtualDataCount / dataSize)
@@ -147,9 +149,35 @@ const reactFlexyTable = ({
     setVirtualData(copyVirtualData)
     onSortedChange(sortBy)
   }
+
+  const downloadExcelFunc = () => {
+    let downloadData
+
+    switch (downloadExcelProps.type) {
+      case 'filtered':
+        downloadData = virtualData
+        break
+      case 'paged':
+        downloadData = virtualData.slice(0, pageSize)
+        break
+      case 'all':
+        downloadData = data
+        break
+      default:
+        downloadData = virtualData
+    }
+    DownloadJsonData(
+      downloadData,
+      downloadExcelProps.title,
+      downloadExcelProps.showLabel
+    )
+  }
   return (
     <div className={'rft-table-collapse ' + styles['rft-table-collapse']}>
-      <table className={'rtf-table ' + styles['rft-table'] + ' ' + className}>
+      <table
+        className={'rtf-table ' + styles['rft-table'] + ' ' + className}
+        id='rft-table-id'
+      >
         <Head
           keys={keys}
           filterable={filterable}
@@ -187,9 +215,12 @@ const reactFlexyTable = ({
           previousText={previousText}
           nextText={nextText}
           ofText={ofText}
+          downloadExcelText={downloadExcelText}
           totalDataText={totalDataText}
           filteredDataText={filteredDataText}
           colSpan={colSpan}
+          downloadExcelFunc={downloadExcelFunc}
+          showExcelButton={showExcelButton}
         />
       </table>
     </div>
@@ -212,6 +243,12 @@ reactFlexyTable.defaultProps = {
   ofText: 'of',
   totalDataText: 'Total data count',
   filteredDataText: 'Filtered data count',
+  downloadExcelText: 'Download Excel',
+  downloadExcelProps: {
+    type: 'all',
+    title: 'table',
+    showLabel: true
+  },
   onPageChange: () => {},
   onSortedChange: () => {},
   onPageSizeChange: () => {},
@@ -219,7 +256,8 @@ reactFlexyTable.defaultProps = {
   additionalCols: [],
   className: '',
   globalSearch: false,
-  searchText: 'Search'
+  searchText: 'Search',
+  showExcelButton: false
 }
 
 reactFlexyTable.propTypes = {
@@ -237,6 +275,8 @@ reactFlexyTable.propTypes = {
   nextText: PropTypes.string,
   rowsText: PropTypes.string,
   pageText: PropTypes.string,
+  downloadExcelText: PropTypes.string,
+  showExcelButton: PropTypes.bool,
   ofText: PropTypes.string,
   totalDataText: PropTypes.string,
   filteredDataText: PropTypes.string,

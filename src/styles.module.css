@@ -5,8 +5,8 @@
   --rft-button-color: #00b879;
   --rft-even-row-color: #f3f3f3;
 }
-.rft-table-collapse{
-overflow-x: auto;
+.rft-table-collapse {
+  overflow-x: auto;
 }
 .rft-gs-input {
   width: 70% !important;
@@ -15,9 +15,9 @@ overflow-x: auto;
 }
 
 .rft-gs-td {
- display: flex;
- align-items: center;
- justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .rft-table-div {
@@ -47,7 +47,7 @@ overflow-x: auto;
   background-color: #00a36d;
   color: white;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .rft-table thead input {
@@ -59,7 +59,8 @@ overflow-x: auto;
   outline-width: 0;
 }
 
-.rft-table th, .rft-table td {
+.rft-table th,
+.rft-table td {
   padding: 12px 15px;
 }
 
@@ -88,12 +89,10 @@ overflow-x: auto;
   padding: 5px 10px;
 }
 
-
 .rft-pagination-button {
   padding: 10px;
-  margin: 10px
+  margin: 10px;
 }
-
 
 .rft-pagination-button {
   border: 3px solid var(--rft-button-color);
@@ -109,10 +108,29 @@ overflow-x: auto;
   min-width: 100px;
   outline-width: 0;
 }
+.rft-excel-button {
+  border: 3px solid var(--rft-button-color);
+  background-color: white;
+  padding: 30px 0;
+  margin: auto 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  color: var(--rft-button-color);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 100px;
+  outline-width: 0;
+}
 
+.rft-excel-button:hover {
+  background-color: var(--rft-button-color);
+  transition: 0.3s;
+  color: #fff;
+}
 .rft-pagination-button:hover {
   background-color: var(--rft-button-color);
-  transition: .3s;
+  transition: 0.3s;
   color: #fff;
 }
 

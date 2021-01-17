@@ -12,6 +12,11 @@ const App = () => {
   const [sortable, setSortable] = useState(true)
   const [filterable, setFilterable] = useState(true)
   const [data, setData] = useState([])
+  const [downloadExcelProps, setDownloadExcelProps] = useState({
+    type: 'all',
+    title: 'test',
+    showLabel: true
+  })
   useEffect(() => {
     const fetchData = async () => {
       const endpoint = `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean`
@@ -75,6 +80,18 @@ const App = () => {
       }
     }
   ]
+  const editDownloadProps = (e) => {
+    let newProps = { ...downloadExcelProps }
+
+    newProps[e.target.name] = e.target.value
+    setDownloadExcelProps(newProps)
+  }
+  const editDownloadPropsCheckBox = (e) => {
+    let newProps = { ...downloadExcelProps }
+
+    newProps[e.target.name] = e.target.checked
+    setDownloadExcelProps(newProps)
+  }
   return (
     <div style={{ margin: '30px' }}>
       <h2 style={{ textAlign: 'center' }}>react-flexy-table</h2>
@@ -112,6 +129,41 @@ const App = () => {
             <option value={true}>Open</option>
           </select>
         </div>
+
+        <div style={{ margin: '30px' }}>
+          <label>Download Excel Type</label>
+          <select
+            onChange={editDownloadProps}
+            style={{ marginLeft: '10px', padding: '5px' }}
+            value={downloadExcelProps.type}
+            name='type'
+          >
+            <option value={'filtered'}>Filtered</option>
+            <option value={'paged'}>Paged</option>
+            <option value={'all'}>All</option>
+          </select>
+        </div>
+
+        <div style={{ margin: '30px' }}>
+          <label>Download Excel Show Label</label>
+          <input
+            type='checkbox'
+            onChange={editDownloadPropsCheckBox}
+            style={{ marginLeft: '10px', padding: '5px' }}
+            checked={downloadExcelProps.showLabel}
+            name='showLabel'
+          />
+        </div>
+        <div style={{ margin: '30px' }}>
+          <label>Download Excel title</label>
+          <input
+            type='text'
+            onChange={editDownloadProps}
+            style={{ marginLeft: '10px', padding: '5px' }}
+            value={downloadExcelProps.title}
+            name='title'
+          />
+        </div>
       </div>
       <ReactFlexyTable
         data={data}
@@ -120,6 +172,8 @@ const App = () => {
         caseSensitive={caseSensivite}
         additionalCols={additionalCols}
         globalSearch
+        downloadExcelProps={downloadExcelProps}
+        showExcelButton
       />
     </div>
   )
