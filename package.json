@@ -21,8 +21,7 @@
     "datagrid",
     "component",
     "excel",
-    "download excel",
-
+    "download excel"
   ],
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
