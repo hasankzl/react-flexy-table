@@ -222,6 +222,7 @@ type: // default is "all" it could be "filtered","all","paged" if you pass "all"
 title: // name of the excel file default is "table"
 
 showLabel: // takes a bool value default is "true". Determines the appearance of column names in the file
+
 }
 
 ```js
