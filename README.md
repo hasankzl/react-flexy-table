@@ -210,14 +210,17 @@ you can download your data in excel file. For do that use showExcelButton
 return <ReactFlexyTable data={data} filterable caseSensitive showExcelButton />
 ```
 
+<img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/excelButton.png" />
+
 you can pass a downloadExcelProps object to change download excel properties
 
 downloadExcelProps is an object includes 3 prop
 
 {
-type: // default is "all" it could be "filtered","all","paged" if you pass "all" will download all data if you pass "filtered"
-// will download all filtered data, if you pass "paged" will download the current page
+type: // default is "all" it could be "filtered","all","paged" if you pass "all" will download all data if you pass "filtered" will download all filtered data, if you pass "paged" will download the current page
+
 title: // name of the excel file default is "table"
+
 showLabel: // takes a bool value default is "true". Determines the appearance of column names in the file
 }
 
