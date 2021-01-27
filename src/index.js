@@ -122,6 +122,7 @@ const reactFlexyTable = ({
       return isFit
     }
     const filteredData = data.filter((d) => isOk(d))
+    setPage(1)
     setVirtualData(filteredData)
   }
 
@@ -136,6 +137,7 @@ const reactFlexyTable = ({
 
     const filteredData = data.filter((d) => isOk(d))
     setVirtualData(filteredData)
+    setPage(1)
   }
 
   const sortVirtualData = (sortBy, isAsc) => {

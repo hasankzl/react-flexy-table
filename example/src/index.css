@@ -1,11 +1,140 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* add css module styles here (optional) */
+
+:root {
+  --rft-main-color: #00b879;
+  --rft-button-color: #00b879;
+  --rft-even-row-color: #f3f3f3;
+}
+._styles-module__rft-table-collapse__S4rTU {
+  overflow-x: auto;
+}
+._styles-module__rft-gs-input__1N4Iz {
+  width: 70% !important;
+  padding: 7px !important;
+  border-radius: 10px !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+._styles-module__rft-gs-td__2lyTg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+._styles-module__rft-table-div__1PR0i {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px 5px 0 0;
+  margin: 3px;
+}
+._styles-module__rft-table__1OmBB {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+  color: #212529;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+._styles-module__rft-table__1OmBB thead tr {
+  background-color: var(--rft-main-color);
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+._styles-module__rft-table__1OmBB thead th:hover {
+  background-color: #00a36d;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+._styles-module__rft-table__1OmBB thead input {
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+  width: 80%;
+  outline-width: 0;
+}
+
+._styles-module__rft-table__1OmBB th,
+._styles-module__rft-table__1OmBB td {
+  padding: 12px 15px;
+}
+
+._styles-module__rft-table__1OmBB tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+._styles-module__rft-table__1OmBB tbody tr:nth-of-type(even) {
+  background-color: var(--rft-even-row-color);
+}
+
+._styles-module__rft-table__1OmBB tbody tr:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  color: #009879;
+}
+
+._styles-module__rft-pagination__14pe8 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+._styles-module__rft-pagination__14pe8 select {
+  padding: 5px 10px;
+}
+
+._styles-module__rft-pagination-button__3cYlG {
+  padding: 10px;
+  margin: 10px;
+}
+
+._styles-module__rft-pagination-button__3cYlG {
+  border: 3px solid var(--rft-button-color);
+  background-color: white;
+  padding: 30px 0;
+  margin: auto 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  color: var(--rft-button-color);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 100px;
+  outline-width: 0;
+}
+._styles-module__rft-excel-button__3nrH2 {
+  border: 3px solid var(--rft-button-color);
+  background-color: white;
+  padding: 30px 0;
+  margin: auto 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  color: var(--rft-button-color);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 100px;
+  outline-width: 0;
+}
+
+._styles-module__rft-excel-button__3nrH2:hover {
+  background-color: var(--rft-button-color);
+  transition: 0.3s;
+  color: #fff;
+}
+._styles-module__rft-pagination-button__3cYlG:hover {
+  background-color: var(--rft-button-color);
+  transition: 0.3s;
+  color: #fff;
+}
+
+._styles-module__rft-pagination-button__3cYlG:active {
+  background-color: var(--rft-button-color);
+  color: #fff;
 }
