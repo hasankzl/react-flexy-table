@@ -37,16 +37,14 @@ const App = () => {
               alt='delete'
               width='30'
               height='20'
-              onClick={() =>
-                alert('this is delete for  ' + index + ' :' + data.question)
-              }
+              onClick={() => alert('this is delete for' + data.question)}
             />
             <img
               src={editIcon}
               alt='edit'
               width='30'
               height='20'
-              onClick={() => alert('this is edit for ' + data.question)}
+              onClick={() => alert('this is edit for' + data.question)}
             />
           </div>
         )
