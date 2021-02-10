@@ -29,7 +29,7 @@ const App = () => {
   const additionalCols = [
     {
       header: 'Actions',
-      td: (data) => {
+      td: (data, index) => {
         return (
           <div>
             <img
@@ -37,49 +37,23 @@ const App = () => {
               alt='delete'
               width='30'
               height='20'
-              onClick={() => alert('this is delete for id ' + data.id)}
+              onClick={() =>
+                alert('this is delete for  ' + index + ' :' + data.question)
+              }
             />
             <img
               src={editIcon}
               alt='edit'
               width='30'
               height='20'
-              onClick={() => alert('this is edit for id ' + data.id)}
+              onClick={() => alert('this is edit for ' + data.question)}
             />
           </div>
         )
       }
     }
   ]
-  const columns = [
-    {
-      header: 'name',
-      key: 'user.name'
-    },
-    {
-      header: 'Actions',
-      td: (data) => {
-        return (
-          <div>
-            <img
-              src={deleteIcon}
-              alt='delete'
-              width='30'
-              height='20'
-              onClick={() => alert('this is delete for id ' + data.id)}
-            />
-            <img
-              src={editIcon}
-              alt='edit'
-              width='30'
-              height='20'
-              onClick={() => alert('this is edit for id ' + data.id)}
-            />
-          </div>
-        )
-      }
-    }
-  ]
+
   const editDownloadProps = (e) => {
     let newProps = { ...downloadExcelProps }
 
