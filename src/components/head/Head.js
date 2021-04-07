@@ -14,7 +14,9 @@ function Head({
   generalFilterVirtualData,
   colSpan,
   searchText,
-  columns
+  columns,
+  queries,
+  generalSearch
 }) {
   const [sortBy, setSortBy] = useState('')
   const handleSearch = (e) => {
@@ -45,6 +47,7 @@ function Head({
               className={'rft-gs-input ' + styles['rft-gs-input']}
               type='text'
               onChange={handleGeneralSearch}
+              value={generalSearch}
             />
           </td>
         </tr>
@@ -93,7 +96,16 @@ function Head({
             : keys.map((key) =>
                 !nonFilterCols.includes(key) ? (
                   <td key={key}>
-                    <input name={key} onChange={handleSearch} type='text' />
+                    <input
+                      name={key}
+                      onChange={handleSearch}
+                      type='text'
+                      value={
+                        !queries.find((query) => query.key === key)
+                          ? ''
+                          : queries.find((query) => query.key === key).search
+                      }
+                    />
                   </td>
                 ) : (
                   <td />

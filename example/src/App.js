@@ -18,14 +18,14 @@ const App = () => {
     showLabel: true
   })
   useEffect(() => {
-    const fetchData = async () => {
-      const endpoint = `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean`
-      const items = await (await fetch(endpoint)).json()
-      setData(items.results)
-    }
-
-    fetchData()
+    fetchData(20)
   }, [])
+
+  const fetchData = async (count) => {
+    const endpoint = `https://opentdb.com/api.php?amount=${count}&category=9&difficulty=easy&type=boolean`
+    const items = await (await fetch(endpoint)).json()
+    setData(items.results)
+  }
   const additionalCols = [
     {
       header: 'Actions',
@@ -37,14 +37,14 @@ const App = () => {
               alt='delete'
               width='30'
               height='20'
-              onClick={() => alert('this is delete for' + data.question)}
+              onClick={() => alert('this is delete for ' + data.question)}
             />
             <img
               src={editIcon}
               alt='edit'
               width='30'
               height='20'
-              onClick={() => alert('this is edit for' + data.question)}
+              onClick={() => alert('this is edit for ' + data.question)}
             />
           </div>
         )
@@ -67,6 +67,7 @@ const App = () => {
   return (
     <div style={{ margin: '30px' }}>
       <h2 style={{ textAlign: 'center' }}>react-flexy-table</h2>
+      <button onClick={() => fetchData(10)}>SEARCH AGAIN</button>
       <div style={{ display: 'flex' }}>
         <div style={{ margin: '30px' }}>
           <label>Handle search case sensivite</label>

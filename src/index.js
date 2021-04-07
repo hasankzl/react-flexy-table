@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 import Head from './components/head/Head'
 import Body from './components/body/Body'
@@ -35,16 +35,21 @@ const reactFlexyTable = ({
 }) => {
   const [virtualData, setVirtualData] = useState([...data])
   const [copyData, setCopyData] = useState([...data])
-
+  const [queries, setQueries] = useState([])
+  const [page, setPage] = useState(1)
+  const [dataSize, setDataSize] = useState(pageSize)
+  const [generalSearch, setGeneralSearch] = useState('')
   // maybe this is not the correct way to check if data is changed
   // but I couldn't find any other way and some how useEffect didn't work
   if (copyData !== data) {
     setCopyData(data)
     setVirtualData(data)
   }
-  const [queries, setQueries] = useState([])
-  const [page, setPage] = useState(1)
-  const [dataSize, setDataSize] = useState(pageSize)
+  useEffect(() => {
+    setPage(1)
+    setQueries([])
+    setGeneralSearch('')
+  }, [data])
 
   let keys
   if (data.length === 0) {
@@ -108,6 +113,7 @@ const reactFlexyTable = ({
       return q
     })
     isIncluded === false && newQueries.push(query)
+
     setQueries(newQueries)
 
     filterVirtualData(newQueries)
@@ -127,6 +133,7 @@ const reactFlexyTable = ({
   }
 
   const generalFilterVirtualData = (query) => {
+    setGeneralSearch(query)
     const isOk = (d) => {
       let isFit = false
       isFit = caseSensitive
@@ -185,6 +192,7 @@ const reactFlexyTable = ({
           filterable={filterable}
           filterVirtualData={filterVirtualData}
           generalFilterVirtualData={generalFilterVirtualData}
+          queries={queries}
           handleQueries={handleQueries}
           sortVirtualData={sortVirtualData}
           nonFilterCols={nonFilterCols}
@@ -195,6 +203,7 @@ const reactFlexyTable = ({
           colSpan={colSpan}
           searchText={searchText}
           columns={columns}
+          generalSearch={generalSearch}
         />
         <Body
           keys={keys}
