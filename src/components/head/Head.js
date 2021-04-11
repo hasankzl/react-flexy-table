@@ -35,7 +35,11 @@ function Head({
     isAsc === -1 ? setSortBy(key + ' clicked') : setSortBy(key)
     sortVirtualData(key, isAsc)
   }
+  const getValueFromQueryKey = (key) => {
+    const query = queries.find((query) => query.key === key)
 
+    return !query ? '' : query.search
+  }
   return (
     <thead>
       {globalSearch && (
@@ -87,7 +91,12 @@ function Head({
             ? columns.map((col) =>
                 !nonFilterCols.includes(col.key) && col.key ? (
                   <td key={col.key}>
-                    <input name={col.key} onChange={handleSearch} type='text' />
+                    <input
+                      name={col.key}
+                      onChange={handleSearch}
+                      type='text'
+                      value={getValueFromQueryKey(col.key)}
+                    />
                   </td>
                 ) : (
                   <td />
@@ -100,11 +109,7 @@ function Head({
                       name={key}
                       onChange={handleSearch}
                       type='text'
-                      value={
-                        !queries.find((query) => query.key === key)
-                          ? ''
-                          : queries.find((query) => query.key === key).search
-                      }
+                      value={getValueFromQueryKey(key)}
                     />
                   </td>
                 ) : (

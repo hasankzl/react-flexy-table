@@ -65,30 +65,47 @@ const reactFlexyTable = ({
   const maxPageSize = Math.ceil(virtualDataCount / dataSize)
   const colSpan = columns ? columns.length : keys.length + additionalCols.length
   const defaultFilter = (d, newQueries) => {
-    return newQueries.every((query) =>
-      getProp(d, query.key.split('.'))
-        .toString()
-        .toLowerCase()
-        .includes(query.search.toLowerCase())
-    )
+    return newQueries.every((query) => {
+      const prop = getProp(d, query.key.split('.'))
+      if (prop) {
+        return prop
+          .toString()
+          .toLowerCase()
+          .includes(query.search.toLowerCase())
+      } else {
+        return query.search === ' '
+      }
+    })
   }
   const defaultFilterCaseSensitive = (d, newQueries) => {
-    return newQueries.every((query) =>
-      getProp(d, query.key.split('.')).toString().includes(query.search)
-    )
+    return newQueries.every((query) => {
+      const prop = getProp(d, query.key.split('.'))
+      if (prop) {
+        return prop.toString().includes(query.search)
+      } else {
+        return query.search === ' '
+      }
+    })
   }
 
   const generalDefaultFilter = (d, query) => {
     return keys.some((key) => {
-      return getProp(d, key.split('.'))
-        .toString()
-        .toLowerCase()
-        .includes(query.toLowerCase())
+      const prop = getProp(d, key.split('.'))
+      if (prop) {
+        return prop.toString().toLowerCase().includes(query.toLowerCase())
+      } else {
+        return query.search === ' '
+      }
     })
   }
   const generalDefaultFilterCaseSensitive = (d, query) => {
     return keys.some((key) => {
-      return getProp(d, key.split('.')).toString().includes(query)
+      const prop = getProp(d, key.split('.'))
+      if (prop) {
+        return prop.toString().includes(query)
+      } else {
+        return query.search === ' '
+      }
     })
   }
 
@@ -153,6 +170,11 @@ const reactFlexyTable = ({
     copyVirtualData.sort((a, b) => {
       var x = a[sortBy]
       var y = b[sortBy]
+      if (x === null) {
+        return 1
+      } else if (y === null) {
+        return -1
+      }
       return x < y ? isAsc * 1 : x > y ? isAsc * -1 : 0
     })
     setVirtualData(copyVirtualData)

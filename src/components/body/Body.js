@@ -7,7 +7,7 @@ function Body({ data, pageSize, page, keys, additionalCols, columns }) {
         .slice(pageSize * (page - 1), pageSize * page)
         .map((singleData, index) => {
           return columns ? (
-            <tr key={index}>
+            <tr key={index + 'rft'}>
               {columns.map((col) => (
                 <td key={col.key}>
                   {col.td
@@ -17,9 +17,11 @@ function Body({ data, pageSize, page, keys, additionalCols, columns }) {
               ))}
             </tr>
           ) : (
-            <tr key={index}>
+            <tr key={index + 'rft'}>
               {keys.map((key) => (
-                <td key={key}>{singleData[key].toString()}</td>
+                <td key={key}>
+                  {singleData[key] ? singleData[key].toString() : ''}
+                </td>
               ))}
               {additionalCols.map((col, i) => (
                 <td key={i}>{col.td(singleData, i)}</td>
