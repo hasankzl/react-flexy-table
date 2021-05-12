@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import ReactFlexyTable from 'react-flexy-table'
 import 'react-flexy-table/dist/index.css'
-import './index.css'
 
 import deleteIcon from './icons/delete-button-svgrepo-com.svg'
 import editIcon from './icons/edit-svgrepo-com.svg'

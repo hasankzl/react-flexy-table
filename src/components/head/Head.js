@@ -44,15 +44,16 @@ function Head({
     <thead>
       {globalSearch && (
         <tr className='rft-gs-tr'>
-          <td colSpan={colSpan - 1} />
-          <td className={'rft-gs-td ' + styles['rft-gs-td']}>
-            <span>{searchText}</span>
-            <input
-              className={'rft-gs-input ' + styles['rft-gs-input']}
-              type='text'
-              onChange={handleGeneralSearch}
-              value={generalSearch}
-            />
+          <td colSpan={colSpan}>
+            <div className={'rft-gs-td ' + styles['rft-gs-td']}>
+              <span>{searchText}</span>
+              <input
+                className={'rft-gs-input ' + styles['rft-gs-input']}
+                type='text'
+                onChange={handleGeneralSearch}
+                value={generalSearch}
+              />
+            </div>
           </td>
         </tr>
       )}

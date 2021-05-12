@@ -9,15 +9,16 @@
   overflow-x: auto;
 }
 .rft-gs-input {
-  width: 70% !important;
+  width: 12% !important;
   padding: 7px !important;
+  margin-left: 5px;
   border-radius: 10px !important;
 }
 
 .rft-gs-td {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .rft-table-div {
