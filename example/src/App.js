@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import ReactFlexyTable from 'react-flexy-table'
 import 'react-flexy-table/dist/index.css'
 
+import GitHubButton from 'react-github-btn'
 import deleteIcon from './icons/delete-button-svgrepo-com.svg'
 import editIcon from './icons/edit-svgrepo-com.svg'
 
@@ -235,6 +236,31 @@ const App = () => {
   return (
     <div style={{ margin: '30px' }}>
       <h2 style={{ textAlign: 'center' }}>react-flexy-table</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center'
+        }}
+      >
+        <GitHubButton
+          href='https://github.com/hasankzl'
+          data-size='large'
+          data-show-count='true'
+          aria-label='Follow @hasankzl on GitHub'
+        >
+          Follow @hasankzl
+        </GitHubButton>
+        <div style={{ margin: 10 }}></div>
+        <GitHubButton
+          href='https://github.com/hasankzl/react-flexy-table'
+          data-icon='octicon-star'
+          data-size='large'
+          data-show-count='true'
+          aria-label='Star hasankzl/react-pageable-select on GitHub'
+        >
+          Star
+        </GitHubButton>
+      </div>
       <button onClick={() => fetchData(10)}>SEARCH AGAIN</button>
       <div style={{ display: 'flex' }}>
         <div style={{ margin: '30px' }}>
