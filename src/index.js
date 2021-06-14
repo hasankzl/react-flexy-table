@@ -254,6 +254,7 @@ const reactFlexyTable = ({
           colSpan={colSpan}
           downloadExcelFunc={downloadExcelFunc}
           showExcelButton={showExcelButton}
+          pageSize={pageSize}
         />
       </table>
     </div>

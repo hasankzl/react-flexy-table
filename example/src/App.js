@@ -308,6 +308,7 @@ const App = () => {
       </div>
       <ReactFlexyTable
         data={data}
+        pageSize={10}
         sortable={sortable}
         filterable={filterable}
         caseSensitive={caseSensivite}
