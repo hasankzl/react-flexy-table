@@ -66,7 +66,7 @@ function Pagination({
             <div>
               <select
                 onChange={(e) => handlePageSizeChange(Number(e.target.value))}
-                value={pageSize}
+                defaultValue={pageSize}
               >
                 {pageSizeOptions.map((pso) => (
                   <option key={pso} value={pso}>
