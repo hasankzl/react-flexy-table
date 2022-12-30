@@ -16,7 +16,8 @@ function Head({
   searchText,
   columns,
   queries,
-  generalSearch
+  generalSearch,
+  customFİlters
 }) {
   const [sortBy, setSortBy] = useState('')
   const handleSearch = (e) => {
@@ -92,12 +93,16 @@ function Head({
             ? columns.map((col) =>
                 !nonFilterCols.includes(col.key) && col.key ? (
                   <td key={col.key}>
-                    <input
-                      name={col.key}
-                      onChange={handleSearch}
-                      type='text'
-                      value={getValueFromQueryKey(col.key)}
-                    />
+                    {
+                      Object.keys(customFİlters).includes(col.key) ? customFİlters[col.key]() : (
+                        <input
+                          name={col.key}
+                          onChange={handleSearch}
+                          type='text'
+                          value={getValueFromQueryKey(col.key)}
+                        />
+                      )
+                    }
                   </td>
                 ) : (
                   <td />
@@ -106,12 +111,16 @@ function Head({
             : keys.map((key) =>
                 !nonFilterCols.includes(key) ? (
                   <td key={key}>
-                    <input
-                      name={key}
-                      onChange={handleSearch}
-                      type='text'
-                      value={getValueFromQueryKey(key)}
-                    />
+                    {
+                      Object.keys(customFİlters).includes(key) ? customFİlters[key]() : (
+                          <input
+                            name={key}
+                            onChange={handleSearch}
+                            type='text'
+                            value={getValueFromQueryKey(key)}
+                          />
+                      )
+                    }
                   </td>
                 ) : (
                   <td />

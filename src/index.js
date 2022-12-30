@@ -31,7 +31,8 @@ const reactFlexyTable = ({
   globalSearch,
   downloadExcelProps,
   showExcelButton,
-  columns
+  columns,
+  customFİlters
 }) => {
   const [virtualData, setVirtualData] = useState([...data])
   const [copyData, setCopyData] = useState([...data])
@@ -226,6 +227,7 @@ const reactFlexyTable = ({
           searchText={searchText}
           columns={columns}
           generalSearch={generalSearch}
+          customFİlters={customFİlters}
         />
         <Body
           keys={keys}
@@ -291,7 +293,8 @@ reactFlexyTable.defaultProps = {
   className: '',
   globalSearch: false,
   searchText: 'Search',
-  showExcelButton: false
+  showExcelButton: false,
+  customFİlters: {}
 }
 
 reactFlexyTable.propTypes = {
