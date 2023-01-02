@@ -1,6 +1,6 @@
 {
   "name": "react-flexy-table",
-  "version": "1.8.8",
+  "version": "1.8.10",
   "description": "most easy to use react table",
   "author": "CoderSau",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
@@ -57,9 +57,9 @@
     "gh-pages": "^2.2.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0"
   },
   "files": [
     "dist"
