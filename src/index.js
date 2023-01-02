@@ -282,7 +282,7 @@ reactFlexyTable.defaultProps = {
   downloadExcelText: 'Download Excel',
   downloadExcelProps: {
     type: 'all',
-    title: 'table',
+    title: 'table.xls',
     showLabel: true
   },
   onPageChange: () => {},

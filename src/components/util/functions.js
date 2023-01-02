@@ -56,7 +56,7 @@ export const DownloadJsonData = (JSONData, FileTitle, ShowLabel) => {
       var url = URL.createObjectURL(blob)
       link.setAttribute('href', url)
       link.style = 'visibility:hidden'
-      link.download = filename + '.csv'
+      link.download = filename
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
