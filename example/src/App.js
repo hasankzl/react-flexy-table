@@ -333,7 +333,7 @@ const App = () => {
         </div>
       </div>
       <ReactFlexyTable
-        customFİlters={{ incorrect_answers: () => <button>Check All</button> }}
+        customFilters={{ incorrect_answers: () => <button>Check All</button> }}
         data={data}
         pageSize={10}
         sortable={sortable}

@@ -144,12 +144,16 @@ const App = () => {
 export default App
 ```
 
-if you want to add custom filter component. U just add new props to component
+You can also add custom filter component. To do that
+add customFilters props like below. Column key represent key value in columns prop and return a callback function. If key exists table uses callback function instead of default filter.
 
 ```
-<ReactFlexyTable  customFİlters={{ column_key: () => <button>Check All</button> }}   ...props />
+<ReactFlexyTable  customFilters={{ id: () => <button>id</button>, name:()=><input name="name" /> }}   ...props />
 ```
 
+```
+<ReactFlexyTable  customFilters={{ column_key: () => <button>Check All</button> }}   ...props />
+```
 
 <img crossorigin="anonymous" src="https://github.com/CoderSau/react-flexy-table/blob/master/rft-images/filter.png" />
 
@@ -296,7 +300,7 @@ rft-pagination-button
 |      pageSize      |  Number  | 5                                            |                                                        page size of the table                                                        |
 |      sortable      | Boolean  | false                                        |                                                   allows to sort data from header                                                    |
 |     filterable     | Boolean  | false                                        |                                                     open filter inputs for table                                                     |
-|     customFİlters     | Object  | {}                                        |                                                     change filter component with custom filter table                                                     |
+|   customFilters    |  Object  | {}                                           |                                           change filter component with custom filter table                                           |
 |    GlobalSearch    | Boolean  | false                                        |                                                    shows the global search input                                                     |
 |   nonFilterCols    |  array   | [ ]                                          | if filterable open but you dont want to filter some cols you can use this. array includes column names that you dont want to filter. |
 |    nonSortCols     |  array   | [ ]                                          |             if you dont want to sort some cols you can use this. array includes column name that you dont want to sort.              |
